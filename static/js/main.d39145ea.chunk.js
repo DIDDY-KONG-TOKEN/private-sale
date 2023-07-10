@@ -141,7 +141,7 @@
                             Object(_.jsxs)("div", {
                                 class: b.a.topbar,
                                 children: [
-                                    Object(_.jsxs)("div", { class: b.a.topbarleftalign, children: [Object(_.jsx)("div", { class: b.a.logo }), Object(_.jsx)("p", { class: b.a.logostaking, children: "Purple Floki Private Sale" })] }),
+                                    Object(_.jsxs)("div", { class: b.a.topbarleftalign, children: [Object(_.jsx)("div", { class: b.a.logo }), Object(_.jsx)("p", { class: b.a.logostaking, children: "Diddy Kong Private Sale" })] }),
                                     e
                                         ? Object(_.jsx)("div", { class: "".concat(b.a.connectwalletbutton, " ").concat(b.a.connectwalletbuttonactive), children: "Connected" })
                                         : Object(_.jsx)("div", {
@@ -164,11 +164,18 @@
                                                 Object(_.jsx)("input", {
                                                     onChange: function (t) {
                                                         var n = t.target.value;
+                                                        
                                                         if (!isNaN(n)) {
+                                                            //5000000000000000
                                                             var e = y.utils.toWei(n, "ether");
+                                                            
                                                             E(e);
                                                             var c = y.utils.fromWei(e, "gwei");
-                                                            C(250 * c);
+                                                            c = c / 10000000;
+                                                            // 16666666650
+                                                            // 16666666665
+                                                            // 16666666.665000001
+                                                            C(Number((n * 3333333333).toFixed(3)));
                                                         }
                                                     },
                                                     class: b.a.buyinputelement,
