@@ -163,7 +163,7 @@
                                             children: [
                                                 Object(_.jsx)("input", {
                                                     onChange: function (t) {
-                                                        var n = t.target.value;
+                                                        var n = t.target.value.replace(',', '.');
                                                         
                                                         if (!isNaN(n)) {
                                                             //5000000000000000
@@ -176,6 +176,15 @@
                                                             // 16666666665
                                                             // 16666666.665000001
                                                             C(Number((n * 3333333333).toFixed(3)));
+                                                        }
+                                                    },
+                                                    onBlur: function (t) {
+
+                                                        var n = t.target.value.replace(',', '.');
+                                                        if (isNaN(n)) {
+                                                            const input = document.getElementsByClassName(b.a.buyinputelement)[0];
+                                                            input.value = 0;
+                                                            C(0);
                                                         }
                                                     },
                                                     class: b.a.buyinputelement,
